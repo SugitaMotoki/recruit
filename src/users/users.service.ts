@@ -19,7 +19,12 @@ const accouunts: {
 @Injectable()
 export class UsersService {
   create(createUserDto: CreateUserDto) {
-    accouunts.push(createUserDto);
+    accouunts.push({
+      user_id: createUserDto.user_id,
+      password: createUserDto.password,
+      nickname: createUserDto.user_id,
+      comment: '僕は元気です',
+    });
     return createUserDto;
   }
 
